@@ -26,7 +26,7 @@ const Settings = imports.ui.settings;
  * Enable/disable debug logging to ~/.xsession-errors
  * @type {boolean}
  */
-const logging = true;
+const logging = false;
 
 /**
  * HTTP session for API requests.
