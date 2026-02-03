@@ -1,0 +1,97 @@
+# Russian translation for nightscout@ranneft
+# This file is put in the public domain.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nightscout@ranneft 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/linuxmint/cinnamon-spices-applets/"
+"issues\n"
+"POT-Creation-Date: 2024-04-09 14:22-0400\n"
+"PO-Revision-Date: 2026-02-03 19:30+0300\n"
+"Last-Translator: \n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. metadata.json->description
+msgid "Fetches API from your Nightscout site and showing BG"
+msgstr "Получает данные с вашего сайта Nightscout и отображает уровень глюкозы"
+
+#. metadata.json->name
+msgid "Nightscout"
+msgstr "Nightscout"
+
+#. settings-schema.json->head->description
+msgid "General Settings for the Nighscout Applet"
+msgstr "Общие настройки апплета Nightscout"
+
+#. settings-schema.json->refreshInterval->units
+#. settings-schema.json->showMissingInterval->units
+msgid "minutes"
+msgstr "минут"
+
+#. settings-schema.json->refreshInterval->description
+msgid "Refresh Interval for your Nightscout applet:"
+msgstr "Интервал обновления апплета Nightscout:"
+
+#. settings-schema.json->refreshInterval->tooltip
+msgid ""
+"Increase or decrease this spinner value to change the refresh interval - use "
+"a slow refresh if you have a slow machine."
+msgstr ""
+"Увеличьте или уменьшите это значение для изменения интервала обновления - "
+"используйте медленное обновление на слабых машинах."
+
+#. settings-schema.json->head1->description
+msgid "Nightscout host"
+msgstr "Сервер Nightscout"
+
+#. settings-schema.json->host->description
+msgid "Nighscout host (including http(s))"
+msgstr "Адрес сервера Nightscout (включая http(s))"
+
+#. settings-schema.json->host->tooltip
+msgid "A host where your CGM information gonna be queried"
+msgstr "Сервер, с которого будут запрашиваться данные CGM"
+
+#. settings-schema.json->token->description
+msgid "Nightscout API token"
+msgstr "API-токен Nightscout"
+
+#. settings-schema.json->token->tooltip
+msgid "API access token (e.g., school-... or xdrip-...)"
+msgstr "Токен доступа к API (например, school-... или xdrip-...)"
+
+#. settings-schema.json->head2->description
+msgid "Various settings"
+msgstr "Дополнительные настройки"
+
+#. settings-schema.json->showMissing->description
+msgid "Show missing readings"
+msgstr "Показывать пропущенные показания"
+
+#. settings-schema.json->showMissing->tooltip
+msgid "Add information about missing readings in the text"
+msgstr "Добавлять информацию о пропущенных показаниях в текст"
+
+#. settings-schema.json->showMissingInterval->description
+msgid "When start to show missing readings alert"
+msgstr "Через сколько показывать предупреждение о пропуске"
+
+#. settings-schema.json->showMissingInterval->tooltip
+msgid ""
+"Time which is taken to decide when to show alert of missing readings. Will "
+"apply only if above checkbox is enabled"
+msgstr ""
+"Время, после которого будет показано предупреждение о пропущенных показаниях. "
+"Применяется только если включена опция выше"
+
+#. settings-schema.json->usemmol->description
+msgid "Use mmol/l"
+msgstr "Использовать ммоль/л"
+
+#. settings-schema.json->usemmol->tooltip
+msgid "Use mmol/l instead of mg/dl"
+msgstr "Использовать ммоль/л вместо мг/дл"
