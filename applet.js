@@ -274,11 +274,6 @@ NightscoutApplet.prototype = {
         this.settings.bindProperty(Settings.BindingDirection.IN, "lowThreshold", "lowThreshold", this._updateSettings, null);
         this.settings.bindProperty(Settings.BindingDirection.IN, "lowColor", "lowColor", this._updateSettings, null);
 
-        // Initialize default property values
-        this.token = "";
-        this.host = "";
-        this.refreshInterval = 2;
-
         try {
             this.set_applet_icon_path(metadata.path + '/icons/nightscout.png');
             this.set_applet_label("Loading...");
