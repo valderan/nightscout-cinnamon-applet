@@ -95,3 +95,36 @@ msgstr "Использовать ммоль/л"
 #. settings-schema.json->usemmol->tooltip
 msgid "Use mmol/l instead of mg/dl"
 msgstr "Использовать ммоль/л вместо мг/дл"
+
+#. settings-schema.json->head3->description
+msgid "Glucose thresholds"
+msgstr "Пороги глюкозы"
+
+#. settings-schema.json->highThreshold->description
+msgid "High glucose threshold"
+msgstr "Порог высокого сахара"
+
+#. settings-schema.json->highThreshold->tooltip
+#. settings-schema.json->lowThreshold->tooltip
+msgid "Value depends on selected units (mmol/l or mg/dl)"
+msgstr "Значение зависит от выбранных единиц (ммоль/л или мг/дл)"
+
+#. settings-schema.json->highColor->description
+msgid "High glucose color"
+msgstr "Цвет высокого сахара"
+
+#. settings-schema.json->highColor->tooltip
+msgid "Color when glucose is at or above high threshold"
+msgstr "Цвет при достижении или превышении порога высокого сахара"
+
+#. settings-schema.json->lowThreshold->description
+msgid "Low glucose threshold"
+msgstr "Порог низкого сахара"
+
+#. settings-schema.json->lowColor->description
+msgid "Low glucose color"
+msgstr "Цвет низкого сахара"
+
+#. settings-schema.json->lowColor->tooltip
+msgid "Color when glucose is at or below low threshold"
+msgstr "Цвет при достижении или опускании ниже порога низкого сахара"

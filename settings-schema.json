@@ -54,5 +54,39 @@
     "default": true,
     "description": "Use mmol/l",
     "tooltip": "Use mmol/l instead of mg/dl"
+  },
+  "head3": {
+    "type": "header",
+    "description": "Glucose thresholds"
+  },
+  "highThreshold": {
+    "type": "spinbutton",
+    "default": 10,
+    "min": 1,
+    "max": 400,
+    "step": 0.5,
+    "description": "High glucose threshold",
+    "tooltip": "Value depends on selected units (mmol/l or mg/dl)"
+  },
+  "highColor": {
+    "type": "colorchooser",
+    "default": "red",
+    "description": "High glucose color",
+    "tooltip": "Color when glucose is at or above high threshold"
+  },
+  "lowThreshold": {
+    "type": "spinbutton",
+    "default": 4,
+    "min": 1,
+    "max": 400,
+    "step": 0.5,
+    "description": "Low glucose threshold",
+    "tooltip": "Value depends on selected units (mmol/l or mg/dl)"
+  },
+  "lowColor": {
+    "type": "colorchooser",
+    "default": "yellow",
+    "description": "Low glucose color",
+    "tooltip": "Color when glucose is at or below low threshold"
   }
 }

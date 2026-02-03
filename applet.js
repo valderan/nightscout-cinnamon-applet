@@ -6,7 +6,7 @@
  *
  * @author ImmRanneft (original)
  * @author Valderan (fork, Nightscout API v14+/v15+ support)
- * @version 0.2.0
+ * @version 0.3.0
  * @license Same as Cinnamon Spices
  *
  * Debug: tail -f ~/.xsession-errors | grep nightscout
@@ -26,7 +26,7 @@ const Settings = imports.ui.settings;
  * Enable/disable debug logging to ~/.xsession-errors
  * @type {boolean}
  */
-const logging = false;
+const logging = true;
 
 /**
  * HTTP session for API requests.
@@ -217,6 +217,34 @@ NightscoutApplet.prototype = {
      */
     showMissingInterval: 15,
 
+    /**
+     * High glucose threshold value (in user's preferred units).
+     * @type {number}
+     * @setting highThreshold
+     */
+    highThreshold: 10,
+
+    /**
+     * Color to display when glucose is at or above high threshold.
+     * @type {string}
+     * @setting highColor
+     */
+    highColor: "red",
+
+    /**
+     * Low glucose threshold value (in user's preferred units).
+     * @type {number}
+     * @setting lowThreshold
+     */
+    lowThreshold: 4,
+
+    /**
+     * Color to display when glucose is at or below low threshold.
+     * @type {string}
+     * @setting lowColor
+     */
+    lowColor: "yellow",
+
     /* ------------------------------------------------------------------------
      * LIFECYCLE METHODS
      * ------------------------------------------------------------------------ */
@@ -241,6 +269,10 @@ NightscoutApplet.prototype = {
         this.settings.bindProperty(Settings.BindingDirection.IN, "host", "host", this._updateSettings, null);
         this.settings.bindProperty(Settings.BindingDirection.IN, "showMissing", "showMissing", this._updateSettings, null);
         this.settings.bindProperty(Settings.BindingDirection.IN, "showMissingInterval", "showMissingInterval", this._updateSettings, null);
+        this.settings.bindProperty(Settings.BindingDirection.IN, "highThreshold", "highThreshold", this._updateSettings, null);
+        this.settings.bindProperty(Settings.BindingDirection.IN, "highColor", "highColor", this._updateSettings, null);
+        this.settings.bindProperty(Settings.BindingDirection.IN, "lowThreshold", "lowThreshold", this._updateSettings, null);
+        this.settings.bindProperty(Settings.BindingDirection.IN, "lowColor", "lowColor", this._updateSettings, null);
 
         // Initialize default property values
         this.token = "";
@@ -268,6 +300,10 @@ NightscoutApplet.prototype = {
         this.usemmol = this.settings.get_boolean("usemmol");
         this.showMissing = this.settings.get_boolean("showMissing");
         this.showMissingInterval = this.settings.get_int("showMissingInterval");
+        this.highThreshold = this.settings.get_double("highThreshold");
+        this.highColor = this.settings.get_string("highColor");
+        this.lowThreshold = this.settings.get_double("lowThreshold");
+        this.lowColor = this.settings.get_string("lowColor");
         log("Settings updated: host=" + this.host + ", token=" + (this.token ? "OK" : "EMPTY"));
     },
 
@@ -308,6 +344,21 @@ NightscoutApplet.prototype = {
     /* ------------------------------------------------------------------------
      * UI METHODS
      * ------------------------------------------------------------------------ */
+
+    /**
+     * Applies color styling to the applet label based on glucose thresholds.
+     *
+     * @param {number} bgValue - Blood glucose value in current units (mmol/l or mg/dl)
+     */
+    applyColorStyle(bgValue) {
+        let style = '';
+        if (bgValue >= this.highThreshold) {
+            style = `color: ${this.highColor};`;
+        } else if (bgValue <= this.lowThreshold) {
+            style = `color: ${this.lowColor};`;
+        }
+        this._applet_label.set_style(style);
+    },
 
     /**
      * Builds and sets the blood glucose display string for the panel.
@@ -381,6 +432,9 @@ NightscoutApplet.prototype = {
         }
 
         this.set_applet_label(bgString);
+
+        // Apply color based on thresholds (bgValue is already in user's preferred units)
+        this.applyColorStyle(parseFloat(bgValue));
     },
 
     /**

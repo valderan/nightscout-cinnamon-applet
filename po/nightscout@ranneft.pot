@@ -93,3 +93,36 @@ msgstr ""
 #. settings-schema.json->usemmol->tooltip
 msgid "Use mmol/l instead of mg/dl"
 msgstr ""
+
+#. settings-schema.json->head3->description
+msgid "Glucose thresholds"
+msgstr ""
+
+#. settings-schema.json->highThreshold->description
+msgid "High glucose threshold"
+msgstr ""
+
+#. settings-schema.json->highThreshold->tooltip
+#. settings-schema.json->lowThreshold->tooltip
+msgid "Value depends on selected units (mmol/l or mg/dl)"
+msgstr ""
+
+#. settings-schema.json->highColor->description
+msgid "High glucose color"
+msgstr ""
+
+#. settings-schema.json->highColor->tooltip
+msgid "Color when glucose is at or above high threshold"
+msgstr ""
+
+#. settings-schema.json->lowThreshold->description
+msgid "Low glucose threshold"
+msgstr ""
+
+#. settings-schema.json->lowColor->description
+msgid "Low glucose color"
+msgstr ""
+
+#. settings-schema.json->lowColor->tooltip
+msgid "Color when glucose is at or below low threshold"
+msgstr ""
