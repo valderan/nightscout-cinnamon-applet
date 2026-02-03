@@ -8,9 +8,11 @@ A Cinnamon desktop applet that displays blood glucose data from your [Nightscout
 
 - Real-time blood glucose display with trend arrows
 - Support for mmol/L and mg/dL units
-- Device battery status in tooltip
+- Uploader device battery status in tooltip
 - Missing readings alert
 - Multi-language support (English, Russian, Spanish, French, and more)
+
+> **Note:** This fork is simplified for CGM-only setups. Insulin pump support (IOB, reservoir, pump battery) has been removed. Only blood glucose readings and uploader phone battery are displayed.
 
 ## Requirements
 
